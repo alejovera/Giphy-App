@@ -1,43 +1,70 @@
 import React, { useState } from "react";
 import MUIDataTable from "mui-datatables";
 
-import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
-import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
-import CodeIcon from '@material-ui/icons/Code';
-import CloudIcon from '@material-ui/icons/Cloud';
+import './Main.css';
 
-// import InputLabel from "@material-ui/core/InputLabel";
-// import MenuItem from "@material-ui/core/MenuItem";
-// import FormHelperText from "@material-ui/core/FormHelperText";
-// import FormControl from "@material-ui/core/FormControl";
-// import Select from "@material-ui/core/Select";
+import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
+
+import ListIcons from './ListIcons';
+import BuildSharpIcon from '@material-ui/icons/BuildSharp';
+
+// const customStyles = theme => ({
+//   BusinessAnalystRow: {
+//     '& td': { backgroundColor: '#FAA' },
+//   },
+//   GreyLine: {
+//     '& td': { backgroundColor: theme.palette.grey[200] },
+//   },
+//   NameCell: {
+//     fontWeight: 900,
+//   },
+// });
+
 
 function Main() {
-  // const [responsive, setResponsive] = useState("vertical");
-  // const [tableBodyHeight, setTableBodyHeight] = useState("400px");
-  // const [tableBodyMaxHeight, setTableBodyMaxHeight] = useState("");
+
+  // getMuiTheme = () => 
+  //   createMuiTheme({
+  //     overrides: {
+  //       MUIDataTable: {
+  //         root: {
+  //           backgroundColor: '#AAF',
+  //         },
+  //       }, 
+  //     },
+  //   });
 
   const columns = [
     {
       name:"Type",
       options: {
         customBodyRenderLite: (dataIndex) => {
+          
           return (
-            <EmojiObjectsIcon />
+            // <CloudIcon />
+            <ListIcons data={dataIndex} />
           )
         }
       }
     }
-    ,"Name", "Sensor", "Date", "Time", "Status", "Action"
+    ,"Name", "Sensor", "Date", "Time", "Status", 
+    {
+      name: "Action",
+      options: {
+        customBodyRenderLite: (dataIndex) => {
+          return (
+            <BuildSharpIcon />
+          )
+        }
+      }
+    }
   ];
 
   const options = {
     filter: true,
     filterType: "dropdown",
     viewColumns: false,
-    // responsive,
-    // tableBodyHeight,
-    // tableBodyMaxHeight
+    selectableRows: false,
   };
 
   const data = [
@@ -50,28 +77,28 @@ function Main() {
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+
     ];
 
-    const components = {
-      icons: {
-        EmojiObjectsIcon,
-        MeetingRoomIcon,
-        CodeIcon,
-        CloudIcon
-      }
-    }
 
   return (
     <React.Fragment>
-      <MUIDataTable
-        className="datatable"
-        title={"ALERTS"}
-        {...{data, columns, options, components}}
-        // data={data}
-        // columns={columns}
-        // options={options}
-        // components={components}
-      />
+      {/* <MuiThemeProvider theme={this.getMuiTheme()}> */}
+        <MUIDataTable
+          className="datatable"
+          title={"ALERTS"}
+          {...{data, columns, options}}
+        />
+      {/* </MuiThemeProvider> */}
     </React.Fragment>
   );
 }
