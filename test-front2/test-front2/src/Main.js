@@ -3,36 +3,36 @@ import MUIDataTable from "mui-datatables";
 
 import './Main.css';
 
-import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
-
+import Footer from './Footer';
 import ListIcons from './ListIcons';
+
 import BuildSharpIcon from '@material-ui/icons/BuildSharp';
 
-// const customStyles = theme => ({
-//   BusinessAnalystRow: {
-//     '& td': { backgroundColor: '#FAA' },
-//   },
-//   GreyLine: {
-//     '& td': { backgroundColor: theme.palette.grey[200] },
-//   },
-//   NameCell: {
-//     fontWeight: 900,
-//   },
-// });
 
 
 function Main() {
 
-  // getMuiTheme = () => 
-  //   createMuiTheme({
-  //     overrides: {
-  //       MUIDataTable: {
-  //         root: {
-  //           backgroundColor: '#AAF',
-  //         },
-  //       }, 
-  //     },
-  //   });
+  const [data, setData] = useState([
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Snoozed", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+
+  ])
 
   const columns = [
     {
@@ -41,7 +41,6 @@ function Main() {
         customBodyRenderLite: (dataIndex) => {
           
           return (
-            // <CloudIcon />
             <ListIcons data={dataIndex} />
           )
         }
@@ -62,32 +61,32 @@ function Main() {
 
   const options = {
     filter: true,
-    filterType: "dropdown",
     viewColumns: false,
     selectableRows: false,
+    rowsPerPage: 10,
   };
 
-  const data = [
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Snoozed", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  // const data = [
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Snoozed", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+  //   ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
 
-    ];
+  //   ];
 
 
   return (
@@ -99,6 +98,7 @@ function Main() {
           {...{data, columns, options}}
         />
       {/* </MuiThemeProvider> */}
+      <Footer />
     </React.Fragment>
   );
 }
