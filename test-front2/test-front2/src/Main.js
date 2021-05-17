@@ -53,7 +53,7 @@ function Main() {
       options: {
         customBodyRenderLite: (dataIndex) => {
           return (
-            <BuildSharpIcon />
+            <BuildSharpIcon color="primary" style={{color: 'lightblue', paddingRight: '0px', marginRight: '0px'}} />
           )
         }
       }
@@ -70,7 +70,7 @@ function Main() {
   const data = [
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
-    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
+    ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Snoozed", ""],
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
