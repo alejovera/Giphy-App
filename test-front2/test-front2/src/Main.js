@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MUIDataTable from "mui-datatables";
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
-import './Main.css';
 
 import Footer from './Footer';
 import ListIcons from './ListIcons';
@@ -9,8 +9,45 @@ import ListIcons from './ListIcons';
 import BuildSharpIcon from '@material-ui/icons/BuildSharp';
 
 
-
 function Main() {
+
+
+  const getMuiTheme = () => createMuiTheme({
+    overrides: {
+      MuiTableCell: {
+        root: {
+          '&:nth-child(2)': {
+            width: '20%'
+          },
+          '&:nth-child(3)': {
+            width: '20%'
+          },
+          '&:nth-child(4)': {
+            width: '20%'
+          },
+          '&:nth-child(5)': {
+            width: '80%'
+          },
+        }
+      },
+      MuiTableRow: {
+        root: {
+          '&:nth-child(2n)': {
+            backgroundColor: 'rgba(0, 0, 0, 0.04)'
+          },
+          '&:hover': {
+            backgroundColor: 'rgb(51, 47, 47)'
+          },
+        }
+      },
+      MUIDataTableFooter: {
+        root: {
+          display: 'none'
+        }
+      }
+    }
+  })
+
 
   const [data, setData] = useState([
     ["", "Alert Name", "Sensor Name", "12/01/2021", "03:21 PM", "Active", ""],
@@ -91,13 +128,13 @@ function Main() {
 
   return (
     <React.Fragment>
-      {/* <MuiThemeProvider theme={this.getMuiTheme()}> */}
+      <MuiThemeProvider theme={getMuiTheme()}>
         <MUIDataTable
           className="datatable"
           title={"ALERTS"}
           {...{data, columns, options}}
         />
-      {/* </MuiThemeProvider> */}
+      </MuiThemeProvider>
       <Footer />
     </React.Fragment>
   );
